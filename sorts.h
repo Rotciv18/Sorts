@@ -136,14 +136,14 @@ void countingSort(int * vetor, int n){
   int offset = 0;
   //int max = maximum(vetor, n);
   int maxi = 0;
-  for (i = 0; i < n; i++){   //Checa o menor número negativo e guarda
+  for (i = 0; i < n; i++){   //Checa o menor nÃºmero negativo e guarda
     if (vetor[i] < offset)
         offset = vetor[i];
   }
 
   offset = offset * -1;
 
-  for (i = 0; i < n; i++){   //Soma TODOS os elementos com o offset para evitar que existam números negativos
+  for (i = 0; i < n; i++){   //Soma TODOS os elementos com o offset para evitar que existam nÃºmeros negativos
     vetor[i] = vetor[i] + offset;
   }
 
@@ -162,46 +162,12 @@ void countingSort(int * vetor, int n){
   i = 0;
   while(i <= n){
     while(counting_array[num] > 0){
-      vetor[i] = num - offset; // '- offset' para retornar os valores ao "normal" (com números negativos)
+      vetor[i] = num - offset; // '- offset' para retornar os valores ao "normal" (com nÃºmeros negativos)
       counting_array[num]--;
       i++;
       if(i > n){ break; }
     }
     num++;
   }
- /* for (i = 0; i < n; i++){   //Soma TODOS os elementos com o offset para evitar que existam números negativos
-    vetor[i] = vetor[i] - offset;
-  }*/
-}
-
-/*###########################
-######## HEAPSORT #########*/
-void heapSort(int a[], int n) {
-   int i = n / 2, pai, filho, t;
-   for (;;) {
-      if (i > 0) {
-          i--;
-          t = a[i];
-      } else {
-          n--;
-          if (n == 0) return;
-          t = a[n];
-          a[n] = a[0];
-      }
-      pai = i;
-      filho = i * 2 + 1;
-      while (filho < n) {
-          if ((filho + 1 < n)  &&  (a[filho + 1] > a[filho]))
-              filho++;
-          if (a[filho] > t) {
-             a[pai] = a[filho];
-             pai = filho;
-             filho = pai * 2 + 1;
-          } else {
-             break;
-          }
-      }
-      a[pai] = t;
-   }
 }
 #endif // SORTS_H_INCLUDED
