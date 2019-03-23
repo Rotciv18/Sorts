@@ -7,8 +7,8 @@ SelectionSort
 QuickSort
 MergeSort
 CountingSort
-HeapSort
 
+As implementações foram feitas em linguagem C
 	Atividade exigida durante a disciplina de Análise e Projeto de Algoritmos.
 O programa pode ser compilado utilizando algum compilador comum para Windows (testado com CodeBlocks) ou com gcc no Linux.
 No caso da segunda opção, basta dar um make para gerar o programa.
